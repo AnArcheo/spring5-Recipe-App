@@ -1,6 +1,7 @@
 package com.springframework.spring5recipeapp.domain;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Recipe {
@@ -21,8 +22,9 @@ public class Recipe {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
-//    @OneToMany(cascade = CascadeType.ALL)
-//    private Ingredient ingredient;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredient;
 //    @ManyToMany(cascade = CascadeType.ALL)
 //    private Category category;
 
@@ -114,19 +116,11 @@ public class Recipe {
         this.notes = notes;
     }
 
-//    public Ingredient getIngredient() {
-//        return ingredient;
-//    }
-//
-//    public void setIngredient(Ingredient ingredient) {
-//        this.ingredient = ingredient;
-//    }
-//
-//    public Category getCategory() {
-//        return category;
-//    }
-//
-//    public void setCategory(Category category) {
-//        this.category = category;
-//    }
+    public Set<Ingredient> getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(Set<Ingredient> ingredient) {
+        this.ingredient = ingredient;
+    }
 }
