@@ -1,8 +1,11 @@
 package com.springframework.spring5recipeapp.domain;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.Set;
 
+@Data
 @Entity
 public class Category {
     @Id
@@ -22,19 +25,4 @@ public class Category {
         Id = id;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Set<Recipe> getRecipes() {
-        return recipes;
-    }
-
-    public void setRecipes(Set<Recipe> recipes) {
-        this.recipes = recipes;
-    }
 }
