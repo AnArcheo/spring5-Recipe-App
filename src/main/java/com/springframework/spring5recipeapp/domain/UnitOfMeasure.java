@@ -1,7 +1,9 @@
 package com.springframework.spring5recipeapp.domain;
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.*;
+@Data
 @Entity
 public class UnitOfMeasure {
     @Id
@@ -13,19 +15,4 @@ public class UnitOfMeasure {
     @OneToOne
     private Ingredient ingredient;
 
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
