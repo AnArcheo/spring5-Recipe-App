@@ -36,7 +36,8 @@
                                     <li th:remove="all">cat one</li>
                                     <li th:remove="all">cat two</li>
                                     <!--/@thymesVar id="recipe" type="com.springframework.spring5recipeapp.domain.Recipe"*/-->
-                                    <li th:each="recipe : ${recipe.categories}" th:text="${categories.getDescription()}">cat three</li>
+                                    <li th:each="recipe : ${recipe.categories}"
+                                    th:text="${recipe.getCategories()}">cat three</li>
                                 </ul>
                             </div>
                         </div>
@@ -92,12 +93,11 @@
                         <div class="row justify-content-center">
                             <div class="col-md-12">
                                 <ul>
+
                                     <li th:remove="all">1 Cup of milk</li>
                                     <li th:remove="all">1 Teaspoon of chocolate</li>
-                                    <li th:each="ingredient : ${recipe.ingredients}"
-                                        th:text="${(ingredient.getAmount() +
-                                        ' ' + ingredient.uom.getDescription() +
-                                        ' - ' + ingredient.getDescription())}">1 Teaspoon of Sugar</li>
+                                    <!--/@thymesVar id="recipe" type="com.springframework.spring5recipeapp.domain.Recipe"*/-->
+                                    <li th:each="ingredient : ${recipe.ingredients}">1 Teaspoon of Sugar</li>
                                 </ul>
                             </div>
                         </div>
