@@ -42,4 +42,11 @@ public class Ingredient {
         this.recipe = recipe;
     }
 
+    public UnitOfMeasure getUom() {
+        return uom;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
 }
