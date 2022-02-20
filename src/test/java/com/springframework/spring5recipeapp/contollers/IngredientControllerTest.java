@@ -1,6 +1,7 @@
 package com.springframework.spring5recipeapp.contollers;
 
 import com.springframework.spring5recipeapp.commands.RecipeCommand;
+import com.springframework.spring5recipeapp.services.IngredientService;
 import com.springframework.spring5recipeapp.services.RecipeService;
 import com.springframework.spring5recipeapp.services.RecipeService;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,6 +22,8 @@ class IngredientControllerTest {
 
     @Mock
     RecipeService recipeService;
+    @Mock
+    IngredientService ingredientService;
 
     IngredientController ingredientController;
 
@@ -28,7 +31,7 @@ class IngredientControllerTest {
 
     @BeforeEach
     void setUp() throws Exception{
-        ingredientController = new IngredientController(recipeService);
+        ingredientController = new IngredientController(recipeService, ingredientService);
         mockMvc = MockMvcBuilders.standaloneSetup(ingredientController).build();
     }
 
