@@ -2,6 +2,7 @@ package com.springframework.spring5recipeapp.contollers;
 
 import com.springframework.spring5recipeapp.commands.RecipeCommand;
 import com.springframework.spring5recipeapp.domain.Difficulty;
+import com.springframework.spring5recipeapp.domain.Recipe;
 import com.springframework.spring5recipeapp.services.RecipeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
